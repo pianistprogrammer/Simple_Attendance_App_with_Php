@@ -1,0 +1,18 @@
+.main-select{padding:9px 0;width:30%;border:none;border-bottom:1px solid #ccc;margin-top: 1%; margin-bottom: 1%}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+
+h5{
+	margin-top: 5%;
+}
+#second {
+  display: none;
+}
+
+#number { display: none; border: solid 1px #ddd; }

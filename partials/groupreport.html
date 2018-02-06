@@ -1,0 +1,140 @@
+﻿ 
+<form >
+   <select ng-model="filter.ogroupId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="group.id as group.name for group in oldgroups" >
+    <option value="" disabled selected>--Select Old group--</option>
+</select>
+<select ng-model="filter.groupId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="group.id as group.name for group in groups">
+     <option value="" disabled selected>--Select group--</option>
+</select>
+
+<select ng-model="filter.districtId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="district.id as district.name for district in districts">
+    <option value="" disabled selected>--Select District--</option>
+</select>
+<select ng-model="filter.monthId" class="main-select w3-border"
+    ng-change="oldgroupChanged()"
+    ng-options="month.id as month.name for month in months" >
+      <option value="" disabled selected>--Select Month--</option>
+</select>
+<select ng-model="filter.weekId" class="main-select w3-border"
+    ng-change="oldgroupChanged()"
+    ng-options="week.id as week.name for week in weeks" >
+      <option value="" disabled selected>--Select Week--</option>
+</select>
+ 
+  
+  <table class="table table-bordered" style="font-size: 12px">
+   
+
+
+   <tr class="bold">
+    
+    <td rowspan="4" style="text-align: center; font-weight: bolder;">S/NO</td>
+    <td width="25%" rowspan="4" style="text-align: center; font-weight: bolder;">DISTRICT</td>
+    <td rowspan="3" colspan="2" style="text-align: center; font-weight: bolder;">SWS</td>
+  <td colspan="12" style="text-align: center; font-weight: bolder;">AVERAGE MONTHLY ATTENDANCE</td>
+        
+</tr>
+
+<tr class="bold">
+       
+  <td colspan="6" style="text-align: center; font-weight: bolder;">WEEKLY MEETINGS ATTENDANCE</td>
+    <td rowspan="2" colspan="6" style="text-align: center; font-weight: bolder;">HCF ATTENDANCE</td>
+      
+</tr>
+<tr class="bold">
+      
+    <td colspan="3" style="text-align: center; font-weight: bolder;">ADULT</td>
+    <td colspan="3" style="text-align: center; font-weight: bolder;">CHILDREN</td>
+    
+</tr>
+<tr class="bold">
+        
+    <td style="text-align: center; font-weight: bolder;">LOWEST</td>
+  <td style="text-align: center; font-weight: bolder;">HIGHEST</td>
+    <td style="text-align: center; font-weight: bolder;">SWS</td>
+    <td style="text-align: center; font-weight: bolder;">MBS</td>
+    <td style="text-align: center; font-weight: bolder;">TRETS</td>
+    <td style="text-align: center; font-weight: bolder;">SWS</td>
+    <td style="text-align: center; font-weight: bolder;">MBS</td>
+    <td style="text-align: center; font-weight: bolder;">TRETS</td>
+    <td style="text-align: center; font-weight: bolder;">MEN</td>
+    <td style="text-align: center; font-weight: bolder;">WOMEN</td>
+    <td style="text-align: center; font-weight: bolder;">YOUTHS</td>
+    <td style="text-align: center; font-weight: bolder;">VISITORS</td>
+    <td style="text-align: center; font-weight: bolder;">TOTAL</td>
+    <td style="text-align: center; font-weight: bolder;">CHILDREN</td> 
+</tr>
+<tr class="text-center" ng-repeat="district in items">
+        <td>{{$index+1}}</td>
+        <td >{{district.DistrictName}}</td>
+        <td>{{district.minsws}}</td>
+        <td>{{district.maxsws}}</td>
+        <td>{{district.swsAverageAdult}}</td>
+        <td>{{district.mbsAverageAdult}}</td>
+        <td>{{district.tretsAverageAdult}}</td>
+        <td>{{district.swsAverageChildren}}</td>
+        <td>{{district.mbsAverageChildren}}</td>
+        <td>{{district.tretsAverageChildren}}</td>
+        <td>{{district.hcfMen}}</td>
+        <td>{{district.hcfWomen}}</td>
+        <td>{{district.hcfYouths}}</td>
+        <td></td>
+        <td></td>
+        <td>{{district.hcfChildren}}</td>
+
+</tr>
+<tr class="bold">
+    
+    <td colspan="2" style="text-align: center; font-weight: bolder;">THIS MONTH</td>
+      <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+        
+</tr>
+<tr class="bold">
+   
+    <td colspan="2" style="text-align: center; font-weight: bolder;">LAST MONTH</td>
+      
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+        
+</tr>
+</table>
+<center style="margin-bottom: 20px">
+     
+<button  ng-click="getAverageGroupReport()" class="btn btn-sm btn-success report">Generate Group Report</button>
+    <button id="printbutton" ng-click="printReport()" class="btn btn-sm btn-warning">Print  Report</button>
+    
+</center>
+ </form>

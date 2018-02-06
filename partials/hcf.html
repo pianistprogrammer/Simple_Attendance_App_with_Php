@@ -1,0 +1,89 @@
+ 
+<form class="w3-container w3-card-4 " method="POST">
+  
+<select ng-model="filter.ogroupId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="group.id as group.name for group in oldgroups" >
+    <option value="" disabled selected>--Select Old group--</option>
+</select>
+<select ng-model="filter.groupId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="group.id as group.name for group in groups">
+     <option value="" disabled selected>--Select group--</option>
+</select>
+<select ng-model="filter.districtId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="district.id as district.name for district in districts">
+    <option value="" disabled selected>--Select District--</option>
+</select>
+<select ng-model="filter.monthId" class="main-select w3-border"
+    ng-change="oldgroupChanged()"
+    ng-options="month.id as month.name for month in months" >
+      <option value="" disabled selected>--Select Month--</option>
+</select>
+<select ng-model="filter.weekId" class="main-select w3-border"
+    ng-change="oldgroupChanged()"
+    ng-options="week.id as week.name for week in weeks" >
+      <option value="" disabled selected>--Select Week--</option>
+</select>
+<select ng-model="filter.zoneId" class="main-select w3-border"
+    ng-change="zoneChanged()"
+    ng-options="zone.id as zone.name for zone in zones">
+     <option value="" disabled selected>--Select Zone--</option>
+</select>
+ 
+<select ng-model="filter.typeId" class="main-select w3-border"
+   ng-change="typeChanged()" ng-options="type.id as type.name for type in types" >
+      <option value="" disabled selected>--Select Type--</option>
+</select>
+<input type="hidden" ng-model="attendance.ogroupName">
+<input type="hidden" ng-model="attendance.groupName">
+<input type="hidden" ng-model="attendance.districtName">
+<input type="hidden" ng-model="attendance.monthName">
+<input type="hidden" ng-model="attendance.weekName">
+<input type="hidden" ng-model="attendance.typeName">
+<input type="hidden" ng-model="attendance.zoneName">
+ 
+  <table class="table table-bordered text-center">
+    <thead>
+     <h5 style="text-align: center; font-weight: bolder;">HCF THIS WEEK</h5>
+    </thead>
+    <thead>
+      
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td rowspan="2">SWS</td>
+        <td rowspan="2">MBS</td>
+        <td rowspan="2">TRETS</td>
+        <td colspan="3" style="text-align: center; font-weight: bolder;">HOUSE FELLOWSHIP</td>
+         
+      </tr>
+      <tr>
+        
+        
+        <td>MEMBERS</td>
+        <td>VISITORS</td>
+        <td>TOTAL</td>
+      </tr>
+      <tr>
+        <td><input class="w3-input" ng-model="attendance.sws"   type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.mbs"  type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.trets"  type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.members" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.visitors" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.total" type="number" disabled></td>
+      </tr>
+              
+      
+
+    </tbody>
+  </table>
+   
+<center style="margin-bottom: 20px">
+    <button ng-click="submitFellowshipReport(attendance)" class="btn btn-lg btn-success">Submit</button>
+</center>
+
+</form>
+

@@ -1,0 +1,86 @@
+ 
+<form class="w3-container w3-card-4 " method="POST">
+<select ng-model="filter.ogroupId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="group.id as group.name for group in oldgroups" >
+    <option value="" disabled selected>--Select Old group--</option>
+</select>
+<select ng-model="filter.groupId"
+    ng-change="oldgroupChanged()" class="main-select w3-border"
+    ng-options="group.id as group.name for group in groups">
+     <option value="" disabled selected>--Select group--</option>
+</select>
+
+<select ng-model="filter.districtId" ng-change="oldgroupChanged()"
+    class="main-select w3-border" ng-options="district.id as district.name for district in districts">
+    <option value="" disabled selected>--Select District--</option>
+</select>
+<select ng-model="filter.monthId" class="main-select w3-border" ng-change="oldgroupChanged()"
+    ng-options="month.id as month.name for month in months" >
+      <option value="" disabled selected>--Select Month--</option>
+</select>
+<select ng-model="filter.weekId" class="main-select w3-border" ng-change="oldgroupChanged()"
+    ng-options="week.id as week.name for week in weeks" >
+      <option value="" disabled selected>--Select Week--</option>
+</select>
+<input type="hidden" ng-model="attendance.ogroupName">
+<input type="hidden" ng-model="attendance.groupName">
+<input type="hidden" ng-model="attendance.districtName">
+<input type="hidden" ng-model="attendance.monthName">
+<input type="hidden" ng-model="attendance.weekName">
+
+
+
+
+  
+
+  <table class="table table-bordered" >
+    <thead>
+     <h5 style="text-align: center; font-weight: bolder;">WEEKLY REPORT RECORD</h5>
+    </thead>
+    <thead>
+      
+    </thead>
+    <tbody>
+       
+      <tr>
+
+        <td colspan="3" style="text-align: center; font-weight: bolder;">CHIDREN</td>
+        <td colspan="3" style="text-align: center; font-weight: bolder;">ADULT</td>
+        
+        <td style="text-align: center; font-weight: bolder;" rowspan="2">Total</td>
+        <!-- <th>Firstname</th>
+        <th>Firstname</th> -->
+      </tr>
+      <tr>
+        
+         <td>SWS</td>
+        <td>MBS</td>
+        <td>TRETS</td>
+         <td>SWS</td>
+        <td>MBS</td>
+        <td>TRETS</td>
+      </tr>
+      <tr>
+        <td><input class="w3-input" ng-model="attendance.swsChildren" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.mbsChildren" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.tretsChildren" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.swsAdult" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.mbsAdult" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.tretsAdult" type="number"></td>
+        <td><input class="w3-input" ng-model="attendance.total" type="number" disabled></td>
+      </tr>
+       
+     
+       
+      
+
+
+    </tbody>
+</table>
+<center style="margin-bottom: 20px">
+    <button ng-click="submitAttendance(attendance)" class="btn btn-lg btn-success">Submit</button>
+</center>
+
+</form>
+ 
